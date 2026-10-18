@@ -8,8 +8,25 @@ driver = webdriver.Chrome()
 driver.get("http://localhost:5005/")
 
 sleep(2)
+RandomGivenLetter = driver.find_element(By.ID, "randomPositionDisplay")
+calculatedLetter = int(RandomGivenLetter.text)
+calculatedLetter = calculatedLetter // 3
+foundLetter = "z"
+
+alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+            'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+            'U', 'V', 'W', 'X', 'Y', 'Z']
+i=3
+while i>=3:
+    if i == calculatedLetter:
+        foundLetter = alphabet[i-1]
+        print(foundLetter, alphabet[i])
+        break
+    else:
+        i = i + 1
+
 inputField = driver.find_element(By.ID, "letterInput")
-inputField.send_keys("C")
+inputField.send_keys(foundLetter)
 submitButton = driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]')
 submitButton.click()
 
