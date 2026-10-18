@@ -10,17 +10,18 @@ driver.get("http://localhost:5005/")
 sleep(2)
 RandomGivenLetter = driver.find_element(By.ID, "randomPositionDisplay")
 calculatedLetter = int(RandomGivenLetter.text)
-calculatedLetter = calculatedLetter // 3
+calculatedLetter = round(calculatedLetter / 3)
 foundLetter = "z"
 
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
             'U', 'V', 'W', 'X', 'Y', 'Z']
-i=3
-while i>=3:
+i=1
+while i>=1 and i <=26:
     if i == calculatedLetter:
         foundLetter = alphabet[i-1]
-        print(foundLetter, alphabet[i])
+        print("the given letter is:" , RandomGivenLetter.text, "the calculated letter is:"
+              , calculatedLetter,  alphabet[i-1])
         break
     else:
         i = i + 1
@@ -43,5 +44,5 @@ if expected_result.text == user_result.text:
 else:
     print("Result mismatch: Expected and user letters do not match.")
 
-sleep(2)
+sleep(3)
 driver.quit()
