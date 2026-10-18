@@ -1,9 +1,6 @@
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-
-
 
 driver = webdriver.Chrome()
 driver.get("https://testpages.eviltester.com/pages/forms/text-inputs/")
