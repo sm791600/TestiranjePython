@@ -10,7 +10,7 @@ driver.get("http://localhost:5005/")
 sleep(2)
 RandomGivenLetter = driver.find_element(By.ID, "randomPositionDisplay")
 calculatedLetter = int(RandomGivenLetter.text)
-calculatedLetter = round(calculatedLetter / 3)
+calculatedLetter = calculatedLetter // 3
 foundLetter = "z"
 
 alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
