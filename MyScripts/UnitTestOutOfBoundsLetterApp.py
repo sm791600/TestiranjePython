@@ -14,7 +14,6 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'U', 'V', 'W', 'X', 'Y', 'Z']
 givenLetter = (driver.find_element(By.ID, "givenLetterDisplay")).text
 i = 0
-# y=0
 while i < len(alphabet):
     if alphabet[i] == givenLetter:
         givenLetter = alphabet[(i //3)-1]
